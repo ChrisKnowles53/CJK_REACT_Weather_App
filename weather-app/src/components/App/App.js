@@ -20,26 +20,7 @@ function App() {
     const weatherData = await response.json()
     console.log(weatherData)
 
-    const maxTemp = weatherData.timelines.daily[0].values.temperatureMax
-    const minTemp = weatherData.timelines.daily[0].values.temperatureMin
-    const avgTemp = weatherData.timelines.daily[0].values.temperatureAvg
-    const weatherCodeMax = weatherData.timelines.daily[0].values.weatherCodeMax
-    const weatherCodeMin = weatherData.timelines.daily[0].values.weatherCodeMin
-
-    const maxTempElement = document.getElementById("maxTemp");
-    maxTempElement.textContent = maxTemp;
-
-    const minTempElement = document.getElementById("minTemp");
-    minTempElement.textContent = minTemp;
-
-    const avgTempElement = document.getElementById("avgTemp");
-    avgTempElement.textContent = avgTemp;
-
-    const weatherCodeMaxElement = document.getElementById("weatherCodeMax");
-    weatherCodeMaxElement.textContent = weatherCodeMax;
-
-    const weatherCodeMinElement = document.getElementById("weatherCodeMin");
-    weatherCodeMinElement.textContent = weatherCodeMin;
+   
 }
 
 
@@ -47,7 +28,7 @@ function App() {
     <div className="App">
       <p>Powered by <a href="https://www.tomorrow.io/weather-api">Tomorrow.io</a></p>
       <br></br>
-      
+
       <WeatherCard props = {props}/>
       <Input handleSubmit={handleSubmit} data={data} setData={setData} />
       

@@ -1,7 +1,6 @@
-import Button from '../Button/Button'
 
 // need to pass JSON weather data as a prop
-function Card (JSONDATA as a prop) { 
+function weatherCard (JSONDATA as a prop) { 
 
 // deconstruct JSONDATA prop into variables i want to use
     const {title, text, img} = appProps
@@ -19,9 +18,31 @@ function Card (JSONDATA as a prop) {
             <p>Today's weather codeMin: <span id ="weatherCodeMin"></span></p>
             
             {/* not sure the button should be here or if it needs any props*/}
-            <Button props?/>
+            
         </div>
     )
 }
 
 export default Card
+
+// this is the deconstruted data from vanilla js file
+// const maxTemp = weatherData.timelines.daily[0].values.temperatureMax
+// const minTemp = weatherData.timelines.daily[0].values.temperatureMin
+// const avgTemp = weatherData.timelines.daily[0].values.temperatureAvg
+// const weatherCodeMax = weatherData.timelines.daily[0].values.weatherCodeMax
+// const weatherCodeMin = weatherData.timelines.daily[0].values.weatherCodeMin
+
+// const maxTempElement = document.getElementById("maxTemp");
+// maxTempElement.textContent = maxTemp;
+
+// const minTempElement = document.getElementById("minTemp");
+// minTempElement.textContent = minTemp;
+
+// const avgTempElement = document.getElementById("avgTemp");
+// avgTempElement.textContent = avgTemp;
+
+// const weatherCodeMaxElement = document.getElementById("weatherCodeMax");
+// weatherCodeMaxElement.textContent = weatherCodeMax;
+
+// const weatherCodeMinElement = document.getElementById("weatherCodeMin");
+// weatherCodeMinElement.textContent = weatherCodeMin;
