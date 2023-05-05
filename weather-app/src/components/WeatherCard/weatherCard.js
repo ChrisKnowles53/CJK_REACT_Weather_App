@@ -6,7 +6,7 @@ function weatherCard ({weatherData, dayIndex}) {
 
     const maxTemp = weatherData.timelines.daily[dayIndex].values.temperatureMax
     const minTemp = weatherData.timelines.daily[dayIndex].values.temperatureMin
-    const avgTemp = weatherData.timelines.daily[dayIndex].values.temperatureAvg
+    
     const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax
     const weatherCodeMin = weatherData.timelines.daily[dayIndex].values.weatherCodeMin
     
@@ -22,9 +22,9 @@ function weatherCard ({weatherData, dayIndex}) {
             {/* <p>Enter a City, ZIP or Postcode: <input type="text" id="cityInput"/></p>
             <button onclick="getWeather()">Get Weather</button> */}
             <p>{plainDate === today ? "Today" : plainDate}</p>
-            <p>Today's max temperature: {maxTemp}</p>
-            <p>Today's min temperature: {minTemp}</p>
-            <p>Today's average temperature: {avgTemp}</p>
+            <p>Max: {maxTemp}&deg;</p>
+            <p>Min: {minTemp}&deg;</p>
+            
             <p>Today's weather codeMax: {weatherCodeMax}</p>
             <p>Today's weather codeMin: {weatherCodeMin}</p>
             
