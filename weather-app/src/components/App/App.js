@@ -6,6 +6,7 @@ import WeatherCard from '../WeatherCard/weatherCard';
 
 let apiKey = `IA7w4QOpYihHr7eC23DrVBhm5OIcgIqh`
 let city = `London`
+let dayIndex = 2
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -16,7 +17,6 @@ function App() {
       // i would like to validate the input here so that it is a valid city name and not a number or something else
       const response = await fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${apiKey}`)
       const weatherData = await response.json()
-      console.log(weatherData)
       setWeatherData(weatherData)
     }
 
@@ -29,8 +29,8 @@ function App() {
       <p>Powered by <a href="https://www.tomorrow.io/weather-api">Tomorrow.io</a></p>
       <br></br>
       {weatherData && (
-      <WeatherCard weatherData = {weatherData}/>
-      )};
+      <WeatherCard weatherData = {weatherData} dayIndex = {dayIndex}/>
+      )}
     </div>
   );
 };
