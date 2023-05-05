@@ -6,7 +6,7 @@ import WeatherCard from '../WeatherCard/weatherCard';
 
 let apiKey = `IA7w4QOpYihHr7eC23DrVBhm5OIcgIqh`
 let city = `London`
-let dayIndex = 2
+let dayIndex = 0
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
