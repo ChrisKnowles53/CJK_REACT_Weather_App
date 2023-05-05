@@ -11,14 +11,16 @@ function App() {
 
   useEffect(() => {
     async function getWeather() {
+      if (!weatherData) { // this and the useEffect dependency stop me from hitting the API too many times whilst i develop the app.
       const response = await fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${apiKey}`);
       const weatherData = await response.json();
       console.log(weatherData);
       setWeatherData(weatherData);
+      }
     }
 
     getWeather();
-  }, []);
+  }, [weatherData]);
 
   return (
     <div className="App">
