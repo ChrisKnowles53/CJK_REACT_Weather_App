@@ -1,7 +1,22 @@
-.App {
-  text-align: center;
-  
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(235, 235, 235);
 }
+
+.mainDisplay{
+  background-color: rgb(251, 253, 213);
+  background-image: url('../../V2_icons/large/png/10000_clear_large.png'); ;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 65vh;
+  width: 50vw
+}
+
 body {
   background-color: rgb(235, 235, 235)
 }
