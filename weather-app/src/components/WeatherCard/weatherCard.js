@@ -7,28 +7,23 @@ function WeatherCard ({weatherData, dayIndex}) {
     const maxTemp = weatherData.timelines.daily[dayIndex].values.temperatureMax
     const minTemp = weatherData.timelines.daily[dayIndex].values.temperatureMin
     
-    // const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax
     // const weatherCodeMin = weatherData.timelines.daily[dayIndex].values.weatherCodeMin
     
     const dateString = weatherData.timelines.daily[dayIndex].time;
     const dateObj = new Date(dateString);
     const plainDate = dateObj.toLocaleDateString(undefined, {weekday: 'long'});
     const today = new Date().toLocaleDateString(undefined, {weekday: 'long'});
-
-     // Get the name of the day using the toLocaleDateString method
-     // let day = date.toLocaleDateString("default", { weekday: "long" });
+    
+    // const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax;
+    // const icon = `/v2_icons/small/png/${weatherCodeMax}.png`;
 
     return (
         <div className="weatherCard">
-
-            {/* <p>Enter a City, ZIP or Postcode: <input type="text" id="cityInput"/></p>
-            <button onclick="getWeather()">Get Weather</button> */}
+            {/* <img src={icon} alt="weather icon" /> */}
             <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
             <p>Max: {maxTemp}&deg;C</p>
             <p>Min: {minTemp}&deg;C</p>
-            
-            {/* not sure the button should be here or if it needs any props*/}
-            
+                          
         </div>
     )
 }
