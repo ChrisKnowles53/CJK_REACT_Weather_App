@@ -2,10 +2,10 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import WeatherCard from '../WeatherCard/weatherCard';
 import SearchBar from '../Input/input';
-requestAnimationFrame('dotenv').config();
 
-
-const apiKey = process.env.API_KEY;
+let apiKey = 'IA7w4QOpYihHr7eC23DrVBhm5OIcgIqh'
+// require('dotenv').config();
+// const apiKey = process.env.API_KEY;
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);

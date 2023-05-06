@@ -3,7 +3,7 @@ input {
  font-size: 1.5rem;
  padding: 8px;
  padding-top: 10px;
- background-color: rgb(65, 122, 253);
+ background-color: rgb(48, 48, 48);
  color: white;
  border-style: none;
  margin-bottom: 30px;
@@ -18,7 +18,7 @@ button {
  border-radius: 10px;
  font-size: 1.5rem;
  padding: 8px;
- background-color: rgb(65, 122, 253);
+ background-color: rgb(48, 48, 48);
  color: white;
  border-style: none;
  margin-left: 10px;

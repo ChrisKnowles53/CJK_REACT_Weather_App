@@ -1,7 +1,10 @@
 import React from 'react'
 import './weatherCard.css'
-import icon from '../../V2_icons/small/png/10000.png'
+// import icon from '../../V2_icons/small/png/1001.png'
 
+import ImportAll from '../Icons/icons'
+const images = ImportAll(require.context('../../V2_icons/small/png', true, /\.png$/));
+// let icon = 1001
 
 function WeatherCard ({weatherData, dayIndex}) { 
 
@@ -15,8 +18,9 @@ function WeatherCard ({weatherData, dayIndex}) {
     const plainDate = dateObj.toLocaleDateString(undefined, {weekday: 'long'});
     const today = new Date().toLocaleDateString(undefined, {weekday: 'long'});
     
-    // const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax;
-    // const icon = `../../V2_icons/small/png/${weatherCodeMax}.png`;
+    const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax;
+    console.log(weatherCodeMax)
+    const icon = images[`./${weatherCodeMax}.png`];
 
     return (
         <div className="weatherCard">
@@ -31,8 +35,7 @@ function WeatherCard ({weatherData, dayIndex}) {
 
 export default WeatherCard
 
-    // <p>Today's weather codeMax: {weatherCodeMax}</p>
-    // <p>Today's weather codeMin: {weatherCodeMin}</p>
+// In this example, we import the importAll function from ./icons and use it to import all the images in the ../../V2_icons/small/png folder. We store the imported images in an images object, which we then use to dynamically select the image we need in our component.
 
 
 
