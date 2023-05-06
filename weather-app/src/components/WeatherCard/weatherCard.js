@@ -2,7 +2,7 @@ import React from 'react'
 import './weatherCard.css'
 
 // need to pass JSON weather data as a prop
-function weatherCard ({weatherData, dayIndex}) { 
+function WeatherCard ({weatherData, dayIndex}) { 
 
     const maxTemp = weatherData.timelines.daily[dayIndex].values.temperatureMax
     const minTemp = weatherData.timelines.daily[dayIndex].values.temperatureMin
@@ -31,7 +31,7 @@ function weatherCard ({weatherData, dayIndex}) {
     )
 }
 
-export default weatherCard
+export default WeatherCard
 
     // <p>Today's weather codeMax: {weatherCodeMax}</p>
     // <p>Today's weather codeMin: {weatherCodeMin}</p>

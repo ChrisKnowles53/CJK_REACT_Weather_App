@@ -1,24 +1,44 @@
 .mainContainer {
+  background-color: rgb(235, 235, 235);
+  background-image: url('../../Images/IMG_20180808_204400.jpg');
+
+  /* need to make this image work for mobile */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(235, 235, 235);
+  position: relative;
+  z-index: 1;
 }
 
 .mainDisplay{
-  background-color: rgb(251, 253, 213);
-  background-image: url('../../V2_icons/large/png/10000_clear_large.png'); ;
-  text-align: center;
+  background-color: rgba(248, 248, 248, 0.283);
   display: flex;
+  text-align: center;
   flex-wrap: wrap;
   align-items: center;
   height: 65vh;
-  width: 50vw
+  width: 50vw;
+  position: relative;
+  z-index: 2;
+  border-radius: 20px; 
+}
+.forecast {
+  background-color: white;
+  z-index: 3;
 }
 
+
 body {
-  background-color: rgb(235, 235, 235)
+  background-image: url('../../Images/IMG_20180808_204400.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
 .App-logo {
   height: 40vmin;

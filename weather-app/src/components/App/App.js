@@ -23,17 +23,25 @@ function App() {
   }, [weatherData]);
 
   return (
-    <>
+    <div>
       <p>Powered by <a href="https://www.tomorrow.io/weather-api">Tomorrow.io</a></p>
-
       <div className="mainContainer">
         <div className="mainDisplay">
-          {weatherData && weatherData.timelines.daily.map((day, index) => (
-          <WeatherCard key={index} weatherData={weatherData} dayIndex={index} />
-          ))}
+          <div className="today">
+            {weatherData &&
+            <WeatherCard weatherData={weatherData} dayIndex={0} />
+            }
+          </div>
+          <div className="forecast">
+            {weatherData && weatherData.timelines.daily.slice(1,5).map((day, index) => (
+            <WeatherCard key={index} weatherData={weatherData} dayIndex={index +1} />
+            ))}
+          </div>
+        </div>
+      
       </div>
     </div>
-    </>
+
   );
 }
 
