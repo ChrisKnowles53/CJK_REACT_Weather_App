@@ -19,13 +19,13 @@ function WeatherCard ({weatherData, dayIndex}) {
     const today = new Date().toLocaleDateString(undefined, {weekday: 'long'});
     
     const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax;
-    console.log(weatherCodeMax)
+   // console.log(weatherCodeMax)
     const icon = images[`./${weatherCodeMax}.png`];
 
     return (
         <div className="weatherCard">
             <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
-            <img src={icon} alt="weather icon" />
+            <img src={icon} alt="weather icon" className="iconImage"/>
             <p className="temp">Max: {maxTemp}&deg;C</p>
             <p className="temp">Min: {minTemp}&deg;C</p>
                           

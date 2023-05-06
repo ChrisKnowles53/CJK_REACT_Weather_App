@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import WeatherCard from '../WeatherCard/weatherCard';
 import SearchBar from '../Input/input';
+import poweredBy from '../../Images/powered-by-tomorrow/Powered_by_Tomorrow-White.png';
 
 let apiKey = 'IA7w4QOpYihHr7eC23DrVBhm5OIcgIqh'
 // require('dotenv').config();
@@ -30,7 +31,6 @@ function handleSearchClick(city) {
 
   return (
     <div>
-      <p>Powered by <a href="https://www.tomorrow.io/weather-api">Tomorrow.io</a></p>
       <div className="mainContainer">
         <div className="mainDisplay">
           <div className="searchBar">
@@ -38,16 +38,19 @@ function handleSearchClick(city) {
           </div>
           <div className="today">
             {weatherData &&
-            <WeatherCard weatherData={weatherData} dayIndex={0} />
+              <WeatherCard weatherData={weatherData} dayIndex={0} />
             }
           </div>
           <div className="forecast">
             {weatherData && weatherData.timelines.daily.slice(1,5).map((day, index) => (
-            <WeatherCard key={index} weatherData={weatherData} dayIndex={index +1} />
-            ))}
+              <WeatherCard key={index} weatherData={weatherData} dayIndex={index +1} />
+              ))
+            }
           </div>
         </div>
-      
+        <a href="https://www.tomorrow.io/weather-api" target="_blank" rel="noopener noreferrer">
+          <img src={poweredBy} alt="poweredBy" className="poweredBy"></img>
+        </a>
       </div>
     </div>
 
