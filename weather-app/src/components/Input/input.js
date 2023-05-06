@@ -1,6 +1,7 @@
+
 import React from "react";
 import { useState } from "react";
-
+import "./input.css";
 
 function SearchBar( {handleSearchClick}) {
   const [city, setCity] = useState("");
@@ -8,7 +9,7 @@ function SearchBar( {handleSearchClick}) {
   return (
     <div className = "search" >
       <input
-        placeholder="Search City"
+        placeholder="Enter City"
         onChange={(event) => setCity(event.target.value)}
       />
       <button

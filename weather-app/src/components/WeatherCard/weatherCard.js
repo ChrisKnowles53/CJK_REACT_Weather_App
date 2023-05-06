@@ -10,18 +10,20 @@ function WeatherCard ({weatherData, dayIndex}) {
     // const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax
     // const weatherCodeMin = weatherData.timelines.daily[dayIndex].values.weatherCodeMin
     
-    const dateString = weatherData.timelines.daily[dayIndex].time
-    // const dateString = "2023-05-05T00:00:00Z";
+    const dateString = weatherData.timelines.daily[dayIndex].time;
     const dateObj = new Date(dateString);
-    const plainDate = dateObj.toISOString().slice(0, 10);
-    const today = new Date().toISOString().slice(0, 10);
+    const plainDate = dateObj.toLocaleDateString(undefined, {weekday: 'long'});
+    const today = new Date().toLocaleDateString(undefined, {weekday: 'long'});
+
+     // Get the name of the day using the toLocaleDateString method
+     // let day = date.toLocaleDateString("default", { weekday: "long" });
 
     return (
         <div className="weatherCard">
 
             {/* <p>Enter a City, ZIP or Postcode: <input type="text" id="cityInput"/></p>
             <button onclick="getWeather()">Get Weather</button> */}
-            <p>{plainDate === today ? "Today" : plainDate}</p>
+            <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
             <p>Max: {maxTemp}&deg;C</p>
             <p>Min: {minTemp}&deg;C</p>
             

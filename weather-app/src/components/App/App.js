@@ -32,8 +32,10 @@ function handleSearchClick(city) {
     <div>
       <p>Powered by <a href="https://www.tomorrow.io/weather-api">Tomorrow.io</a></p>
       <div className="mainContainer">
-        <SearchBar handleSearchClick={handleSearchClick} />
         <div className="mainDisplay">
+          <div className="searchBar">
+            <SearchBar handleSearchClick={handleSearchClick} />
+          </div>
           <div className="today">
             {weatherData &&
             <WeatherCard weatherData={weatherData} dayIndex={0} />
