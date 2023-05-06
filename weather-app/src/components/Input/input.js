@@ -1,26 +1,23 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
+function SearchBar( {handleSearchClick}) {
+  const [city, setCity] = useState("");
 
-function Input() {
-
-//what is the function doing here
-// it need to handle submit
-// it needs to get the value entered from the input
-// it needs to pass the city entered to the api 
-// the api needs to 
-
-
-
-
-return(
-
-//what do i want it to return
-
-);
-
-
+  return (
+    <div className = "search" >
+      <input
+        placeholder="Search City"
+        onChange={(event) => setCity(event.target.value)}
+      />
+      <button
+        onClick={() => { handleSearchClick(city) }}
+      >
+        Search
+      </button>
+    </div>
+  );
 }
 
-
+export default SearchBar;
