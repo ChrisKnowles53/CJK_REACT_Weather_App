@@ -18,20 +18,36 @@
 .mainDisplay{
   background-color: rgba(248, 248, 248, 0.283);
   display: flex;
-  text-align: center;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   height: 65vh;
   width: 50vw;
   position: relative;
   z-index: 2;
   border-radius: 20px; 
 }
+
+.today{
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  z-index: 3;
+  }
+
 .forecast {
-  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
   z-index: 3;
 }
 
+@media (max-width: 1600px) {
+  .forecast {
+    display: none;
+  }
+}
 
 body {
   background-image: url('../../Images/IMG_20180808_204400.jpg');
