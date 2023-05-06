@@ -2,10 +2,11 @@ input {
  border-radius: 10px;
  font-size: 1.5rem;
  padding: 8px;
+ padding-top: 10px;
  background-color: rgb(65, 122, 253);
  color: white;
  border-style: none;
- margin-bottom: 50px;
+ margin-bottom: 30px;
  width: 350px;
 }
 

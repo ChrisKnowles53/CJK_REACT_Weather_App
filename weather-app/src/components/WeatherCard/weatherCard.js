@@ -1,7 +1,8 @@
 import React from 'react'
 import './weatherCard.css'
+import icon from '../../V2_icons/small/png/10000.png'
 
-// need to pass JSON weather data as a prop
+
 function WeatherCard ({weatherData, dayIndex}) { 
 
     const maxTemp = weatherData.timelines.daily[dayIndex].values.temperatureMax
@@ -15,14 +16,14 @@ function WeatherCard ({weatherData, dayIndex}) {
     const today = new Date().toLocaleDateString(undefined, {weekday: 'long'});
     
     // const weatherCodeMax = weatherData.timelines.daily[dayIndex].values.weatherCodeMax;
-    // const icon = `/v2_icons/small/png/${weatherCodeMax}.png`;
+    // const icon = `../../V2_icons/small/png/${weatherCodeMax}.png`;
 
     return (
         <div className="weatherCard">
-            {/* <img src={icon} alt="weather icon" /> */}
             <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
-            <p>Max: {maxTemp}&deg;C</p>
-            <p>Min: {minTemp}&deg;C</p>
+            <img src={icon} alt="weather icon" />
+            <p className="temp">Max: {maxTemp}&deg;C</p>
+            <p className="temp">Min: {minTemp}&deg;C</p>
                           
         </div>
     )

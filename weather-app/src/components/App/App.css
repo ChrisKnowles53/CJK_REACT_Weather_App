@@ -26,7 +26,8 @@
   width: 50vw;
   position: relative;
   z-index: 2;
-  border-radius: 20px; 
+  border-radius: 20px;
+  padding-top: 20px;
 }
 
 .today{
@@ -44,6 +45,12 @@
 }
 
 @media (max-width: 1600px) {
+  .forecast {
+    display: none;
+  }
+}
+
+@media (max-height: 1000px) {
   .forecast {
     display: none;
   }
