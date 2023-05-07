@@ -41,7 +41,7 @@ function App() {
           <div className="searchBar">
             <SearchBar handleSearchClick={handleSearchClick} />
           </div>
-          <h1 className="city">{capitalizeFirstLetter(city)}</h1>
+          <p className="city">{capitalizeFirstLetter(city)}</p>
           <div className="today">
             {weatherData &&
               <WeatherCard weatherData={weatherData} dayIndex={0} />

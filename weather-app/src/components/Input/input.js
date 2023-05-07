@@ -14,7 +14,7 @@ function SearchBar( {handleSearchClick}) {
   return (
     <div className = "search" >
       <input
-        placeholder="Enter City"
+        placeholder="City, Zip, Postcode"
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
         onKeyDown={handleKeyPress}

@@ -39,10 +39,14 @@
   }
 
 
-.city{
+.city {
   display: flex;
   flex-direction: row;
   flex-basis: auto;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
   
 }
 
