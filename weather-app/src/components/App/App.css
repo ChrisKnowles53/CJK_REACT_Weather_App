@@ -22,8 +22,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 65vh;
-  width: 50vw;
+  height: 50vh;
+  width: 45vw;
   position: relative;
   z-index: 2;
   border-radius: 20px;
