@@ -8,8 +8,8 @@ const images = ImportAll(require.context('../../V2_icons/small/png', true, /\.pn
 
 function WeatherCard ({weatherData, dayIndex}) { 
 
-    const maxTemp = weatherData.timelines.daily[dayIndex].values.temperatureMax
-    const minTemp = weatherData.timelines.daily[dayIndex].values.temperatureMin
+    const maxTemp = Math.round(weatherData.timelines.daily[dayIndex].values.temperatureMax)
+    const minTemp = Math.round(weatherData.timelines.daily[dayIndex].values.temperatureMin)
     
     // const weatherCodeMin = weatherData.timelines.daily[dayIndex].values.weatherCodeMin
     
