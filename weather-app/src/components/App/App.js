@@ -25,6 +25,10 @@ function App() {
     getWeather();
   }, [city]);
 
+  function capitalizeFirstLetter(input) {
+    return input.charAt(0).toUpperCase() + input.slice(1);
+  }
+
   function handleSearchClick(city, setInputValue) {
     setCity(city);
     setInputValue("");
@@ -37,7 +41,7 @@ function App() {
           <div className="searchBar">
             <SearchBar handleSearchClick={handleSearchClick} />
           </div>
-          <h1 className="city">{city}</h1>
+          <h1 className="city">{capitalizeFirstLetter(city)}</h1>
           <div className="today">
             {weatherData &&
               <WeatherCard weatherData={weatherData} dayIndex={0} />
