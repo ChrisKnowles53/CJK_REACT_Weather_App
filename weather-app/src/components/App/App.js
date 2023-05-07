@@ -5,8 +5,8 @@ import SearchBar from '../Input/input';
 import poweredBy from '../../Images/powered-by-tomorrow/Powered_by_Tomorrow-White.png';
 
 let apiKey = 'IA7w4QOpYihHr7eC23DrVBhm5OIcgIqh'
-// require('dotenv').config();
 // const apiKey = process.env.API_KEY;
+// require('dotenv').config();
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
