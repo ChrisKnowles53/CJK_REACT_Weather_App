@@ -25,9 +25,10 @@ function App() {
     getWeather();
   }, [city]);
 
-function handleSearchClick(city) {
-  setCity(city);
-}
+  function handleSearchClick(city, setInputValue) {
+    setCity(city);
+    setInputValue("");
+  }
 
   return (
     <div>
@@ -36,6 +37,7 @@ function handleSearchClick(city) {
           <div className="searchBar">
             <SearchBar handleSearchClick={handleSearchClick} />
           </div>
+          <h1 className="city">{city}</h1>
           <div className="today">
             {weatherData &&
               <WeatherCard weatherData={weatherData} dayIndex={0} />

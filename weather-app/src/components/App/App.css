@@ -35,13 +35,23 @@
   flex-direction: row;
   flex-basis: auto;
   z-index: 3;
+  
   }
+
+
+.city{
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  
+}
 
 .forecast {
   display: flex;
   flex-direction: row;
   flex-basis: auto;
   z-index: 3;
+  
 }
 
 .poweredBy {

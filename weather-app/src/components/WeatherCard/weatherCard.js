@@ -25,10 +25,13 @@ function WeatherCard ({weatherData, dayIndex}) {
     return (
         <div className="weatherCard">
             <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
-            <img src={icon} alt="weather icon" className="iconImage"/>
-            <p className="temp">Max: {maxTemp}&deg;C</p>
-            <p className="temp">Min: {minTemp}&deg;C</p>
-                          
+            <div className="iconAndTemp">
+                <img src={icon} alt="weather icon" className="iconImage" />
+                <div className="tempContainer">
+                    <p className="temp">{maxTemp}&deg;C</p>
+                    <p className="temp">{minTemp}&deg;C</p>
+                </div>
+            </div>
         </div>
     )
 }

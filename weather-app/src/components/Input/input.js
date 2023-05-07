@@ -1,19 +1,26 @@
-
 import React from "react";
 import { useState } from "react";
 import "./input.css";
 
 function SearchBar( {handleSearchClick}) {
-  const [city, setCity] = useState("");
+  const [inputValue, setInputValue] = useState("");
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      handleSearchClick(inputValue, setInputValue);
+    }
+  }
 
   return (
     <div className = "search" >
       <input
         placeholder="Enter City"
-        onChange={(event) => setCity(event.target.value)}
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)}
+        onKeyDown={handleKeyPress}
       />
       <button
-        onClick={() => { handleSearchClick(city) }}
+        onClick={() => { handleSearchClick(inputValue, setInputValue) }}
       >
         Search
       </button>
