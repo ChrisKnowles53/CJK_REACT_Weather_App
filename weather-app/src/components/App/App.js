@@ -3,9 +3,7 @@ import React, { useState, useEffect } from "react";
 import WeatherCard from "../WeatherCard/weatherCard";
 import SearchBar from "../Input/input";
 import poweredBy from "../../Images/powered-by-tomorrow/Powered_by_Tomorrow-White.png";
-// import 'dotenv/config';
 
-// let apiKey = 'IA7w4QOpYihHr7eC23DrVBhm5OIcgIqh'
 const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 // require('dotenv').config();
 
