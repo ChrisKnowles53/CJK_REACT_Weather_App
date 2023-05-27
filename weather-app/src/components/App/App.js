@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     async function getWeather() {
-      // if (!weatherData) { // this and the useEffect dependency stop me from hitting the API too many times whilst i develop the app.
+      // if (!weatherData) { // this and the useEffect dependency stop me from hitting the API too many times whilst I develop the app.
       const response = await fetch(
         `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${REACT_APP_API_KEY}`
       );

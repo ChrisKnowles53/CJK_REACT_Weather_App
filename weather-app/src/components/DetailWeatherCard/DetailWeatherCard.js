@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import "./weatherCard.css";
-import DetailWeatherCard from "../DetailWeatherCard/DetailWeatherCard";
+import React from "react";
+import "./DetailWeatherCard.css";
 // import icon from '../../V2_icons/small/png/1001.png'
 
 import ImportAll from "../Icons/icons";
@@ -9,17 +8,21 @@ const images = ImportAll(
 );
 // let icon = 1001
 
-function WeatherCard({ weatherData, dayIndex }) {
-  const [isHovered, setIsHovered] = useState(false);
-
+function DetailWeatherCard({ weatherData, dayIndex }) {
   const maxTemp = Math.round(
     weatherData.timelines.daily[dayIndex].values.temperatureMax
   );
   const minTemp = Math.round(
     weatherData.timelines.daily[dayIndex].values.temperatureMin
   );
-
-  // const weatherCodeMin = weatherData.timelines.daily[dayIndex].values.weatherCodeMin
+  const avgHumidity = Math.round(
+    weatherData.timelines.daily[dayIndex].values.humidityAvg
+  );
+  const probabilityRain = Math.round(
+    weatherData.timelines.daily[dayIndex].values.precipitationProbabilityAvg
+  );
+  const avgWindSpeed =
+    weatherData.timelines.daily[dayIndex].values.windSpeedAvg;
 
   const dateString = weatherData.timelines.daily[dayIndex].time;
   const dateObj = new Date(dateString);
@@ -32,26 +35,20 @@ function WeatherCard({ weatherData, dayIndex }) {
   const icon = images[`./${weatherCodeMax}.png`];
 
   return (
-    <div
-      className="weatherCard"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="DetailWeatherCard">
       <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
       <div className="iconAndTemp">
         <img src={icon} alt="weather icon" className="iconImage" />
         <div className="tempContainer">
-          <p className="temp">{maxTemp}&deg;C</p>
-          <p className="temp">{minTemp}&deg;C</p>
+          <p className="temp">Max Temp:{maxTemp}&deg;C</p>
+          <p className="temp">Min Temp:{minTemp}&deg;C</p>
+          <p className="temp">Humidity:{avgHumidity}%</p>
+          <p className="temp">Rain:{probabilityRain}%</p>
+          <p className="temp">Wind:{avgWindSpeed}UNITS</p>
         </div>
       </div>
-      {isHovered && (
-        <DetailWeatherCard weatherData={weatherData} dayIndex={dayIndex} />
-      )}
     </div>
   );
 }
 
-export default WeatherCard;
-
-// In this example, we import the importAll function from ./icons and use it to import all the images in the ../../V2_icons/small/png folder. We store the imported images in an images object, which we then use to dynamically select the image we need in our component.
+export default DetailWeatherCard;
