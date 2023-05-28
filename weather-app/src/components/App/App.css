@@ -1,6 +1,13 @@
+body {
+  background-image: url("../../Images/IMG_20180808_204400.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .mainContainer {
   background-color: rgb(235, 235, 235);
-  background-image: url('../../Images/IMG_20180808_204400.jpg');
+  background-image: url("../../Images/IMG_20180808_204400.jpg");
 
   /* need to make this image work for mobile */
 
@@ -15,29 +22,27 @@
   z-index: 1;
 }
 
-.mainDisplay{
+.mainDisplay {
   background-color: rgba(248, 248, 248, 0.283);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  width: 45vw;
+  height: 60vh;
+  width: 55vw;
   position: relative;
   z-index: 2;
   border-radius: 20px;
   padding-top: 20px;
 }
 
-.today{
+.today {
   display: flex;
   flex-direction: row;
   flex-basis: auto;
   z-index: 3;
-  
-  }
-
+}
 
 .city {
   display: flex;
@@ -47,7 +52,6 @@
   font-weight: bold;
   padding: 0px;
   margin: 0px;
-  
 }
 
 .forecast {
@@ -55,7 +59,13 @@
   flex-direction: row;
   flex-basis: auto;
   z-index: 3;
-  
+
+  @media (max-width: 1400px) {
+    display: none;
+  }
+  @media (max-height: 800px) {
+    display: none;
+  }
 }
 
 .poweredBy {
@@ -70,51 +80,5 @@
   transform: scale(1.05);
 } */
 
-@media (max-width: 1600px) {
-  .forecast {
-    display: none;
-  }
-}
-
-@media (max-height: 1000px) {
-  .forecast {
-    display: none;
-  }
-}
-
-body {
-  background-image: url('../../Images/IMG_20180808_204400.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-}
-
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 

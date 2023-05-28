@@ -1,12 +1,10 @@
 import React from "react";
 import "./DetailWeatherCard.css";
-// import icon from '../../V2_icons/small/png/1001.png'
-
 import ImportAll from "../Icons/icons";
+
 const images = ImportAll(
   require.context("../../V2_icons/small/png", true, /\.png$/)
 );
-// let icon = 1001
 
 function DetailWeatherCard({ weatherData, dayIndex }) {
   const maxTemp = Math.round(
@@ -21,9 +19,9 @@ function DetailWeatherCard({ weatherData, dayIndex }) {
   const probabilityRain = Math.round(
     weatherData.timelines.daily[dayIndex].values.precipitationProbabilityAvg
   );
-  const avgWindSpeed =
-    weatherData.timelines.daily[dayIndex].values.windSpeedAvg;
-
+  const avgWindSpeed = Math.round(
+    weatherData.timelines.daily[dayIndex].values.windSpeedAvg * 10) / 10;
+  
   const dateString = weatherData.timelines.daily[dayIndex].time;
   const dateObj = new Date(dateString);
   const plainDate = dateObj.toLocaleDateString(undefined, { weekday: "long" });
@@ -40,11 +38,11 @@ function DetailWeatherCard({ weatherData, dayIndex }) {
       <div className="iconAndTemp">
         <img src={icon} alt="weather icon" className="iconImage" />
         <div className="tempContainer">
-          <p className="temp">Max Temp:{maxTemp}&deg;C</p>
-          <p className="temp">Min Temp:{minTemp}&deg;C</p>
-          <p className="temp">Humidity:{avgHumidity}%</p>
-          <p className="temp">Rain:{probabilityRain}%</p>
-          <p className="temp">Wind:{avgWindSpeed}UNITS</p>
+          <p className="temp">Max Temp: {maxTemp}&deg;C</p>
+          <p className="temp">Min Temp: {minTemp}&deg;C</p>
+          <p className="temp">Humidity: {avgHumidity}%</p>
+          <p className="temp">Rain: {probabilityRain}%</p>
+          <p className="temp">Wind: {avgWindSpeed} mph</p>
         </div>
       </div>
     </div>

@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import "./weatherCard.css";
 import DetailWeatherCard from "../DetailWeatherCard/DetailWeatherCard";
-// import icon from '../../V2_icons/small/png/1001.png'
-
 import ImportAll from "../Icons/icons";
+
 const images = ImportAll(
   require.context("../../V2_icons/small/png", true, /\.png$/)
 );
-// let icon = 1001
 
 function WeatherCard({ weatherData, dayIndex }) {
-  const [isHovered, setIsHovered] = useState(false);
-
+ 
   const maxTemp = Math.round(
     weatherData.timelines.daily[dayIndex].values.temperatureMax
   );
   const minTemp = Math.round(
     weatherData.timelines.daily[dayIndex].values.temperatureMin
   );
-
-  // const weatherCodeMin = weatherData.timelines.daily[dayIndex].values.weatherCodeMin
 
   const dateString = weatherData.timelines.daily[dayIndex].time;
   const dateObj = new Date(dateString);
@@ -32,22 +27,20 @@ function WeatherCard({ weatherData, dayIndex }) {
   const icon = images[`./${weatherCodeMax}.png`];
 
   return (
-    <div
-      className="weatherCard"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
-      <div className="iconAndTemp">
-        <img src={icon} alt="weather icon" className="iconImage" />
-        <div className="tempContainer">
-          <p className="temp">{maxTemp}&deg;C</p>
-          <p className="temp">{minTemp}&deg;C</p>
+    <div className="cardContainer">
+      <div className="weatherCard">
+        <p className="dayHeading">{plainDate === today ? "Today" : plainDate}</p>
+        <div className="iconAndTemp">
+          <img src={icon} alt="weather icon" className="iconImage" />
+          <div className="tempContainer">
+            <p className="temp">{maxTemp}&deg;C</p>
+            <p className="temp">{minTemp}&deg;C</p>
+          </div>
         </div>
       </div>
-      {isHovered && (
+      <div className="DetailWeatherCard">
         <DetailWeatherCard weatherData={weatherData} dayIndex={dayIndex} />
-      )}
+      </div>
     </div>
   );
 }
