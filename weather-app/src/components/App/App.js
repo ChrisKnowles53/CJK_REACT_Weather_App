@@ -1,17 +1,18 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import WeatherCard from "../WeatherCard/weatherCard";
+import HourWeatherCard from "../HourWeatherCard/HourWeatherCard";
 import SearchBar from "../Input/input";
 import poweredBy from "../../Images/powered-by-tomorrow/Powered_by_Tomorrow-White.png";
 
 const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 
 //✨need to think about to make this mobile friendly
-    // layout
-    // hover states need ot be click with an indication to click
-  // think about Navbar make it stick to the top
-     // links to home page 
-     // hourly page
+// layout
+// hover states need ot be click with an indication to click
+// think about Navbar make it stick to the top
+// links to home page
+// hourly page
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -19,13 +20,12 @@ function App() {
 
   useEffect(() => {
     async function getWeather() {
-     const response = await fetch(
+      const response = await fetch(
         `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${REACT_APP_API_KEY}`
       );
       const weatherData = await response.json();
       console.log(weatherData);
       setWeatherData(weatherData);
-      
     }
 
     getWeather();
@@ -86,6 +86,9 @@ function App() {
                     dayIndex={index + 1}
                   />
                 ))}
+          </div>
+          <div className="hourly">
+            {weatherData && <HourWeatherCard weatherData={weatherData} />}
           </div>
         </div>
         <a
