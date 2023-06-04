@@ -7,13 +7,15 @@ const images = ImportAll(
 );
 
 // ✅the JSON weatherData contains 5 days of hourly data - Therefore I need to filter based on the next 24hours
-// Filter on date
-// display detail of this hour plus the next 2 hours
+// ✅Filter on date
+// ✅display detail of this hour plus the next 2 hours
 // carousel for the hours left of today
 // Have a button for next day so it takes the user to the next day
 // On next day display the current hour of today with previous hour and next hour with a carousel that goes both directions
+// think about how to display symbols alongside the data so its visually appealing
+// change background to different picture 
 
-// then need to make this appear on a separate page when the user clicks on the DetailWeatherCard
+// ✅then need to make this appear on a separate page when the user clicks on the DetailWeatherCard
 
 export default function Next24Hours({ weatherData }) {
   let now = new Date(); // Getting current date and time
@@ -33,9 +35,10 @@ export default function Next24Hours({ weatherData }) {
   });
 
   // Get previous, current, and next hour data
-  const previousHour = hourlyData[currentIndex - 1];
+  // const previousHour = hourlyData[currentIndex - 1]; //The weatherData only returns the current hour therefore i will adapt to show the current hour plus 2 more hours until i find a way to get historical data.
   const currentHour = hourlyData[currentIndex];
   const nextHour = hourlyData[currentIndex + 1];
+  const nextHour2 = hourlyData[currentIndex + 2];
 
   // Create a ref to the current hour div
   const currentHourRef = useRef();
@@ -47,9 +50,9 @@ export default function Next24Hours({ weatherData }) {
 
   return (
     <div className="HourWeatherCard">
-      {previousHour && <HourData data={previousHour} />}
       {currentHour && <HourData data={currentHour} ref={currentHourRef} />}
       {nextHour && <HourData data={nextHour} />}
+      {nextHour2 && <HourData data={nextHour2} />}
     </div>
   );
 }
