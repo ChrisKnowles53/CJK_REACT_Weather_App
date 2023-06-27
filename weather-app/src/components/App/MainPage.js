@@ -89,6 +89,7 @@ function MainPage() {
                   />
                 </Link>
               ))}
+      </div>
           </div>
           <a
             href="https://www.tomorrow.io/weather-api"
@@ -98,7 +99,6 @@ function MainPage() {
             <img src={poweredBy} alt="poweredBy" className="poweredBy"></img>
           </a>
         </div>
-      </div>
     </div>
   );
 }
