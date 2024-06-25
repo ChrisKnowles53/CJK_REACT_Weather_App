@@ -33,9 +33,14 @@ function MainPage() {
   }, [city]);
 
   function capitalizeInput(input) {
-    // see bottom of code for detailed explanation of this
-    if (/^[a-zA-Z\s]+$/.test(input)) {
-      // If input contains only characters, capitalize first letter of each word
+    const postcodeRegex = /^[a-zA-Z]{1,2}\d{1,2}/;
+
+    if (postcodeRegex.test(input)) {
+      // If input matches the outward code of a UK postcode, extract the outward code
+      const outwardCode = input.match(postcodeRegex)[0];
+      return outwardCode.toUpperCase();
+    } else if (/^[a-zA-Z\s]+$/.test(input)) {
+      // If input contains only characters, capitalize the first letter of each word
       return input
         .split(" ")
         .map((word) => {
@@ -59,7 +64,7 @@ function MainPage() {
   }
 
   function handleSearchClick(city, setInputValue) {
-    setCity(city);
+    setCity(capitalizeInput(city));
     setInputValue("");
   }
 
@@ -89,16 +94,16 @@ function MainPage() {
                   />
                 </Link>
               ))}
-      </div>
           </div>
-          <a
-            href="https://www.tomorrow.io/weather-api"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={poweredBy} alt="poweredBy" className="poweredBy"></img>
-          </a>
         </div>
+        <a
+          href="https://www.tomorrow.io/weather-api"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={poweredBy} alt="poweredBy" className="poweredBy"></img>
+        </a>
+      </div>
     </div>
   );
 }
