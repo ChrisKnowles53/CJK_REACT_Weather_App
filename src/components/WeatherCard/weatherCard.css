@@ -1,70 +1,67 @@
-.weatherCard{
- background-color: white;
- border-radius: 10px;
- width: 110px;
- margin: 20px;
- background-color: rgb(48, 48, 48);
- color: white;
- padding-left: 10px;
- padding-right: 10px;
- padding-bottom: 15px;
- display: flex;
- flex-direction: column;
- align-items: center;
- 
- position: relative;
- width: 100%;
+.weatherCard {
+  margin: 0;
+  border-radius: 10px;
+  width: 110px;
+  background-color: rgb(48, 48, 48);
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .iconAndTemp {
- display: flex;
- justify-content: center;
- flex-direction: row;
- text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: left;
 }
 
 .tempContainer {
- display: flex;
- flex-direction: column;
- margin-left: 15px;
-
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
 }
 
 .temp {
- margin-top: 2px;
- margin-bottom: 1px;
+  margin-top: 2px;
+  margin-bottom: 1px;
 }
 
-.dayHeading{
- font-size: 1.2rem;
- font-weight: bold;
- margin: 10px;
+.dayHeading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .iconImage {
- width: 50px;
- height: 50px;
- display: block;
- margin: 0 auto;
- padding-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 .cardContainer {
- position: relative;
-}
-
-.cardContainer:hover .weatherCard {
- visibility: hidden;
+  position: relative;
 }
 
 .DetailWeatherCard {
- position: absolute;
- top: 0;
- left: 0;
- visibility: hidden;
- z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.cardContainer:hover .weatherCard {
+  visibility: hidden;
 }
 
 .cardContainer:hover .DetailWeatherCard {
- visibility: visible;
+  visibility: visible;
+  opacity: 1;
 }

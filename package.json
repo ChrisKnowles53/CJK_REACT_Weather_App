@@ -25,11 +25,9 @@
     "ws": "^8.17.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "audit:fix": "npm audit fix --force=false || true"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "overrides": {
     "semver": "^6.3.1",
@@ -82,5 +80,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^4.2.1",
+    "vite": "^7.2.2"
   }
 }
